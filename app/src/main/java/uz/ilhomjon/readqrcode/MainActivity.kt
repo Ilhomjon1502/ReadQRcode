@@ -17,6 +17,7 @@ import com.google.android.gms.vision.barcode.BarcodeDetector
 import uz.ilhomjon.readqrcode.databinding.ActivityMainBinding
 import java.io.IOException
 
+//documentation: https://github.com/Ilhomjon1502/ANdroid10/settings
 class MainActivity : AppCompatActivity() {
 
     private val requestCodeCameraPermission = 1001
