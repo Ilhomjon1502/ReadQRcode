@@ -8,6 +8,7 @@ import android.view.SurfaceHolder
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.google.android.gms.vision.CameraSource
@@ -17,7 +18,7 @@ import com.google.android.gms.vision.barcode.BarcodeDetector
 import uz.ilhomjon.readqrcode.databinding.ActivityMainBinding
 import java.io.IOException
 
-//documentation: https://github.com/Ilhomjon1502/ANdroid10/settings
+//documentation: https://harshitabambure.medium.com/barcode-scanner-and-qr-code-scanner-android-kotlin-b911b1299f65
 class MainActivity : AppCompatActivity() {
 
     private val requestCodeCameraPermission = 1001
@@ -103,6 +104,9 @@ class MainActivity : AppCompatActivity() {
                     runOnUiThread {
                         cameraSource.stop()
                         Toast.makeText(this@MainActivity, "value- $scannedValue", Toast.LENGTH_SHORT).show()
+                        val dialog = AlertDialog.Builder(this@MainActivity)
+                        dialog.setMessage(scannedValue)
+                        dialog.show()
                         finish()
                     }
                 }else
